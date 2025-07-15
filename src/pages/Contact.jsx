@@ -18,7 +18,7 @@ function Contact() {
         <p>
           🐙 GitHub:{" "}
           <a href="https://github.com/chike005" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
-            github.com/your-username
+            github.com/chike005
           </a>
         </p>
       </div>
