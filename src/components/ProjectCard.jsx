@@ -8,6 +8,7 @@ function ProjectCard({
   number,
   tone,
   featured,
+  onViewCaseStudy,
 }) {
   return (
     <article
@@ -72,6 +73,15 @@ function ProjectCard({
           {tech}
         </p>
         <div className="mt-auto flex flex-wrap gap-4 pt-6 text-sm font-semibold">
+          {onViewCaseStudy && (
+            <button
+              type="button"
+              onClick={onViewCaseStudy}
+              className="rounded-sm text-[#087f6e] underline decoration-[#a9d2be] underline-offset-4 hover:text-[#066758] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087f6e]"
+            >
+              Explore case study
+            </button>
+          )}
           <a
             href={github}
             target="_blank"
