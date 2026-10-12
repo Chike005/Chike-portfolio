@@ -2,20 +2,134 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: 'Inter', sans-serif;
+:root {
+  --ink: #18332e;
+  --muted: #66746e;
+  --paper: #f7f7f1;
+  --line: #dfe6dd;
+  --teal: #087f6e;
+  --teal-dark: #066758;
+  --lime: #d9ef9f;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+::selection {
+  color: var(--ink);
+  background: var(--lime);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.display-font {
+  font-family: 'DM Serif Display', Georgia, serif;
+}
+
+.page-shell {
+  width: min(100% - 3rem, 1120px);
+  margin-inline: auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--teal);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 1.6rem;
+  height: 1px;
+  background: currentColor;
+  content: '';
+}
+
+.soft-grid {
+  background-image: linear-gradient(rgb(8 127 110 / 4%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(8 127 110 / 4%) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.project-art {
+  position: relative;
+  display: flex;
+  min-height: 230px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.project-art::before,
+.project-art::after {
+  position: absolute;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 9999px;
+  content: '';
+}
+
+.project-art::before {
+  width: 15rem;
+  height: 15rem;
+  transform: translate(45%, -45%);
+}
+
+.project-art::after {
+  width: 10rem;
+  height: 10rem;
+  transform: translate(-65%, 62%);
+}
+
+.project-window {
+  position: relative;
+  z-index: 1;
+  width: min(78%, 350px);
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 0.85rem;
+  background: rgb(255 255 255 / 92%);
+  padding: 1rem;
+  box-shadow: 0 20px 50px rgb(18 45 39 / 17%);
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 2rem, 1120px);
+  }
+
+  .project-art {
+    min-height: 190px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

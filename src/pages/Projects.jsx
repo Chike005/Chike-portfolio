@@ -1,36 +1,54 @@
 import ProjectCard from "../components/ProjectCard";
-import React from "react";
 import SectionTitle from "../components/SectionTitle";
 
+const projects = [
+  {
+    title: "ShareBite",
+    tech: "React, TypeScript, Django, Google Maps API",
+    description:
+      "A food-sharing platform that helps donors and receivers coordinate through staffed collection points. Includes role-aware dashboards, a received-only reservation workflow, and donation status tracking.",
+    github: "https://github.com/Chike005/Sharebitefrontend",
+    backend: "https://github.com/Chike005/sharebite_backend",
+    demo: "https://sharebite.vercel.app",
+    number: "01",
+    tone: "lime",
+    featured: true,
+  },
+  {
+    title: "EcoNuclearHub",
+    tech: "Django, Python, Bootstrap",
+    description:
+      "A collaborative e-commerce application for eco-focused products, including humidity control and environmental monitoring equipment.",
+    github: "https://github.com/chike005/Econuclearhub",
+    number: "02",
+    tone: "blue",
+  },
+  {
+    title: "Portfolio Website",
+    tech: "React, JavaScript, Tailwind CSS",
+    description:
+      "A personal portfolio for sharing selected work, technical interests, and ways to get in touch.",
+    github: "https://github.com/chike005/chike-portfolio",
+    demo: "https://chike-portfolio.vercel.app",
+    number: "03",
+    tone: "green",
+  },
+];
 
 function Projects() {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-16">
+    <main className="page-shell min-h-[calc(100svh-76px)] py-14 sm:py-20">
       <SectionTitle title="Projects" />
-
-      <div className="grid md:grid-cols-2 gap-6">
-        <ProjectCard
-          title="ShareBite"
-          tech="React, Django, Google Maps API"
-          description="A food-sharing platform that connects donors with recipients in real-time using geolocation."
-          github="https://github.com/chike005/sharebite"
-          demo="https://sharebite.vercel.app"
-        />
-        <ProjectCard
-  title="EcoNuclearHub"
-  tech="Django, Bootstrap, Python"
-  description="A collaborative ecommerce web application for selling eco-focused products such as humidity control equipment and environmental monitoring tools. Built with Django for backend and Bootstrap for frontend."
-  github="https://github.com/chike005/Econuclearhub"
-/>
-        <ProjectCard
-          title="Portfolio Website"
-          tech="React, Tailwind CSS"
-          description="My personal portfolio showcasing my skills, projects, and contact information."
-          github="https://github.com/chike005/chike-portfolio"
-          demo="https://chike-portfolio.vercel.app"
-        />
+      <div className="mt-5 grid gap-5 md:grid-cols-2">
+        {projects.map((project) => (
+          <ProjectCard key={project.title} {...project} />
+        ))}
       </div>
-    </div>
+      <div className="mt-10 rounded-2xl border border-[#dfe6dd] bg-white/70 px-6 py-5 text-sm leading-7 text-[#66746e]">
+        <span className="font-semibold text-[#18332e]">Always in progress.</span>{" "}
+        I’m continuing to learn, improve these projects, and build new things.
+      </div>
+    </main>
   );
 }
 
