@@ -37,12 +37,24 @@ function Home() {
               Explore my work <span aria-hidden="true" className="ml-3">↗</span>
             </Link>
             <a
-              href="/chike_resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/chike_resume.html"
               className="inline-flex items-center rounded-full border border-[#bfcfc4] bg-transparent px-6 py-3.5 text-sm font-semibold text-[#18332e] transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087f6e]"
             >
               View résumé
+            </a>
+            <a
+              href="/chike_resume.pdf"
+              download
+              className="inline-flex items-center rounded-full border border-[#bfcfc4] bg-transparent px-5 py-3.5 text-sm font-semibold text-[#18332e] transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087f6e]"
+            >
+              Download PDF
+            </a>
+            <a
+              href="/chike_resume.docx"
+              download
+              className="inline-flex items-center rounded-full border border-[#bfcfc4] bg-transparent px-5 py-3.5 text-sm font-semibold text-[#18332e] transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#087f6e]"
+            >
+              Word version
             </a>
           </div>
 
