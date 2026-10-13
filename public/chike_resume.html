@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="ATS-friendly CV for Chike Emmanuel Ifedi, Graduate Software Engineer."
+    />
+    <meta name="theme-color" content="#f7f7f1" />
+    <title>Chike Emmanuel Ifedi - Graduate Software Engineer CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #18332e;
+        --muted: #53645c;
+        --teal: #087f6e;
+        --line: #dfe6dd;
+        --paper: #f7f7f1;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #e9eee7;
+        color: var(--ink);
+        font-family: "DM Sans", Arial, sans-serif;
+        font-size: 10pt;
+        line-height: 1.42;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 0.85rem;
+        border-bottom: 1px solid var(--line);
+        background: rgb(247 247 241 / 94%);
+        backdrop-filter: blur(12px);
+      }
+
+      .toolbar a,
+      .toolbar button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.6rem;
+        padding: 0.65rem 1.1rem;
+        border: 1px solid var(--ink);
+        border-radius: 999px;
+        background: var(--ink);
+        color: white;
+        cursor: pointer;
+        font: inherit;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .toolbar a.secondary {
+        background: transparent;
+        color: var(--ink);
+      }
+
+      .resume {
+        width: min(100% - 2rem, 210mm);
+        margin: 1.4rem auto;
+        padding: 15mm 17mm;
+        background: white;
+        box-shadow: 0 18px 60px rgb(24 51 46 / 12%);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      .header {
+        padding-bottom: 0.8rem;
+        border-bottom: 2px solid var(--ink);
+      }
+
+      h1 {
+        margin-bottom: 0.1rem;
+        font-family: "DM Serif Display", Georgia, serif;
+        font-size: 29pt;
+        font-weight: 400;
+        letter-spacing: -0.025em;
+        line-height: 1.1;
+      }
+
+      .target-title {
+        margin-bottom: 0.5rem;
+        color: var(--teal);
+        font-size: 11pt;
+        font-weight: 700;
+      }
+
+      .contact {
+        margin: 0;
+        color: var(--muted);
+        font-size: 9pt;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+      }
+
+      .contact a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      section {
+        margin-top: 0.85rem;
+      }
+
+      h2 {
+        margin-bottom: 0.35rem;
+        padding-bottom: 0.22rem;
+        border-bottom: 1px solid var(--line);
+        color: var(--teal);
+        font-size: 10pt;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin-bottom: 0.3rem;
+      }
+
+      .profile {
+        color: #354940;
+      }
+
+      .skills p {
+        margin-bottom: 0.2rem;
+      }
+
+      .entry {
+        margin-top: 0.55rem;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .projects h2 {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      .entry-heading {
+        margin-bottom: 0.12rem;
+        font-size: 9.7pt;
+        font-weight: 700;
+      }
+
+      .entry-meta {
+        color: var(--muted);
+        font-size: 9pt;
+        font-weight: 500;
+      }
+
+      ul {
+        margin: 0.18rem 0 0;
+        padding-left: 1.05rem;
+      }
+
+      li {
+        padding-left: 0.05rem;
+        color: #354940;
+      }
+
+      li + li {
+        margin-top: 0.12rem;
+      }
+
+      li::marker {
+        color: var(--teal);
+      }
+
+      .project-tech {
+        margin-bottom: 0.15rem;
+        color: var(--muted);
+        font-size: 8.8pt;
+      }
+
+      .additional p:last-child,
+      .education .entry:last-child {
+        margin-bottom: 0;
+      }
+
+      @media screen and (max-width: 600px) {
+        .resume {
+          width: calc(100% - 1rem);
+          margin: 0.5rem auto;
+          padding: 1.25rem;
+        }
+
+        h1 {
+          font-size: 25pt;
+        }
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        body {
+          background: white;
+          font-size: 9pt;
+          line-height: 1.34;
+          print-color-adjust: exact;
+          -webkit-print-color-adjust: exact;
+        }
+
+        .toolbar {
+          display: none;
+        }
+
+        .resume {
+          width: 210mm;
+          margin: 0;
+          padding: 12mm 16mm;
+          box-shadow: none;
+        }
+
+        section {
+          margin-top: 0.65rem;
+        }
+
+        .entry {
+          margin-top: 0.4rem;
+        }
+
+        a {
+          color: inherit;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="toolbar" aria-label="CV actions">
+      <button type="button" onclick="window.print()">Print or save as PDF</button>
+      <a class="secondary" href="/chike_resume.docx" download>Download Word</a>
+      <a class="secondary" href="/">Back to portfolio</a>
+    </nav>
+
+    <main>
+      <article class="resume">
+        <header class="header">
+          <h1>Chike Emmanuel Ifedi</h1>
+          <p class="target-title">
+            Graduate Software Engineer | Python | C | Software Testing
+          </p>
+          <p class="contact">
+            Manchester, UK<br />
+            <a href="tel:+447918942902">07918 942 902</a> |
+            <a href="mailto:emmanuelifedi0@gmail.com">emmanuelifedi0@gmail.com</a><br />
+            <a href="https://www.linkedin.com/in/chike-ifedi-691a88265">
+              linkedin.com/in/chike-ifedi-691a88265
+            </a> |
+            <a href="https://github.com/chike005">github.com/chike005</a>
+          </p>
+        </header>
+
+        <section aria-labelledby="profile-title">
+          <h2 id="profile-title">Professional Profile</h2>
+          <p class="profile">
+            Computer Science graduate with a 2:1 degree and practical software
+            engineering experience across design, implementation, testing,
+            debugging and delivery. Program in Python, C, JavaScript and
+            TypeScript, with experience building API-driven systems, working
+            with relational databases and supporting automated build workflows
+            in a collaborative team. Enjoy investigating how software works,
+            breaking problems into clear steps and improving reliability
+            through testing and careful review. Seeking a long-term software
+            development career focused on systems, networking and
+            large-scale production software.
+          </p>
+        </section>
+
+        <section class="skills" aria-labelledby="skills-title">
+          <h2 id="skills-title">Technical Skills</h2>
+          <p>
+            <strong>Programming:</strong> Python, C, JavaScript, TypeScript,
+            SQL, HTML5, CSS3
+          </p>
+          <p>
+            <strong>Software engineering:</strong> Object-oriented programming,
+            algorithms and data structures, modular design, debugging, code
+            review workflows, technical documentation
+          </p>
+          <p>
+            <strong>Testing and quality:</strong> Automated and functional
+            testing, API testing, validation, defect reproduction, edge-case
+            analysis, Postman
+          </p>
+          <p>
+            <strong>Systems and tools:</strong> Windows, Git, GitHub,
+            GitLab, command line, GitHub Actions, GitLab CI, Docker fundamentals
+          </p>
+          <p>
+            <strong>Applications and data:</strong> Django, Django REST
+            Framework, React, Next.js, REST APIs, JSON, PostgreSQL, SQLite, MySQL
+          </p>
+          <p>
+            <strong>Ways of working:</strong> Agile, Scrum, Kanban, JIRA,
+            collaborative problem solving, continuous learning
+          </p>
+        </section>
+
+        <section aria-labelledby="experience-title">
+          <h2 id="experience-title">Professional Experience</h2>
+          <article class="entry">
+            <h3 class="entry-heading">
+              Software Engineer Intern |
+              <span class="entry-meta">Rootspace.com | Sep 2025 - Aug 2026</span>
+            </h3>
+            <ul>
+              <li>
+                Developed and maintained application features using Python and
+                JavaScript within a collaborative software engineering workflow.
+              </li>
+              <li>
+                Worked across the development lifecycle by clarifying
+                requirements, implementing changes, testing behaviour, debugging
+                defects and documenting completed work.
+              </li>
+              <li>
+                Built and integrated REST API functionality, processed JSON
+                requests and worked with SQL-backed records to support reliable
+                application workflows.
+              </li>
+              <li>
+                Supported automated build and delivery activities using Git
+                feature branches and CI workflows; incorporated peer feedback
+                before changes were prepared for release.
+              </li>
+              <li>
+                Investigated issues across application, API and database layers
+                and recorded reproducible steps, outcomes and troubleshooting
+                guidance for the team.
+              </li>
+            </ul>
+          </article>
+          <article class="entry">
+            <h3 class="entry-heading">
+              Independent Software Developer |
+              <span class="entry-meta">
+                Client and portfolio projects | Jan 2024 - Present
+              </span>
+            </h3>
+            <ul>
+              <li>
+                Design and build full-stack applications from initial
+                requirements through implementation, testing and deployment
+                using Python, React, TypeScript and SQL.
+              </li>
+              <li>
+                Use Git to manage incremental changes, review application
+                behaviour and resolve build, integration and runtime issues
+                across frontend and backend components.
+              </li>
+              <li>
+                Use AI-assisted development tools to explore approaches while
+                taking responsibility for reviewing, testing and validating all
+                generated code.
+              </li>
+            </ul>
+          </article>
+          <article class="entry">
+            <h3 class="entry-heading">
+              IT Support Intern |
+              <span class="entry-meta">AppTech, Lagos | Jun 2022 - Aug 2023</span>
+            </h3>
+            <ul>
+              <li>
+                Diagnosed software, hardware and connectivity issues using
+                structured troubleshooting and worked with developers to
+                reproduce defects and verify fixes.
+              </li>
+              <li>
+                Supported software installations and updates, completed basic
+                SQL record checks and explained technical solutions clearly to
+                users and colleagues.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="projects" aria-labelledby="projects-title">
+          <h2 id="projects-title">Selected Software Projects</h2>
+          <article class="entry">
+            <h3 class="entry-heading">ShareBite Food Donation Platform</h3>
+            <p class="project-tech">
+              Python, Django REST Framework, React, TypeScript, SQL | 2025
+            </p>
+            <ul>
+              <li>
+                Designed a full-stack application with authentication,
+                role-based permissions, reservation, proof and delivery
+                workflows connecting donors and recipients.
+              </li>
+              <li>
+                Created relational models and REST endpoints, applied
+                validation and resolved data-consistency and frontend-to-API
+                integration issues.
+              </li>
+              <li>
+                Built and ran automated backend tests covering core API
+                behaviour, with all 10 project tests passing, alongside manual
+                browser and Postman checks.
+              </li>
+            </ul>
+          </article>
+          <article class="entry">
+            <h3 class="entry-heading">CNN Pothole Detection</h3>
+            <p class="project-tech">
+              Python, TensorFlow, Keras, OpenCV | University project
+            </p>
+            <ul>
+              <li>
+                Developed a computer-vision prototype for classifying road
+                images, including preprocessing, augmentation, model training
+                and evaluation.
+              </li>
+              <li>
+                Analysed confusion-matrix results and prediction errors,
+                documented limitations and proposed improvements to data
+                quality and model reliability.
+              </li>
+            </ul>
+          </article>
+          <article class="entry">
+            <h3 class="entry-heading">JobGenie Resume Application</h3>
+            <p class="project-tech">
+              Python, Django REST Framework, React, TypeScript | 2025
+            </p>
+            <ul>
+              <li>
+                Developed an API-driven application for structured resume data
+                using serializers, request validation, error handling and a
+                responsive user interface.
+              </li>
+              <li>
+                Separated frontend and backend responsibilities, managed
+                environment configuration and tested API responses throughout
+                iterative development.
+              </li>
+            </ul>
+          </article>
+          <article class="entry">
+            <h3 class="entry-heading">ToksMimi Foods Client Platform</h3>
+            <p class="project-tech">Next.js, React, TypeScript | 2025</p>
+            <ul>
+              <li>
+                Built a responsive product platform from client requirements,
+                including catalogue search, filtering, product details and a
+                persistent shopping basket.
+              </li>
+              <li>
+                Created reusable components, managed browser and query
+                parameter state and resolved build and interface defects
+                through controlled Git changes.
+              </li>
+            </ul>
+          </article>
+          <article class="entry">
+            <h3 class="entry-heading">Momentum Productivity Application</h3>
+            <p class="project-tech">
+              Python, Django, React, PostgreSQL | 2026 - Present
+            </p>
+            <ul>
+              <li>
+                Designed a goal and task application with progress calculations
+                and lifecycle states backed by a relational PostgreSQL data
+                model.
+              </li>
+              <li>
+                Established the frontend and backend structure, environment
+                configuration and Git baseline for incremental development.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="education" aria-labelledby="education-title">
+          <h2 id="education-title">Education</h2>
+          <article class="entry">
+            <h3 class="entry-heading">
+              BSc Honours Computer Science, 2:1 |
+              <span class="entry-meta">
+                University of Bolton | Graduated July 2025
+              </span>
+            </h3>
+            <p>
+              Relevant study: software engineering, object-oriented
+              programming, algorithms and data structures, databases,
+              operating systems, networking, web development and machine
+              learning.
+            </p>
+          </article>
+          <article class="entry">
+            <h3 class="entry-heading">
+              Professional Diploma in Information Technology |
+              <span class="entry-meta">
+                NIIT Port Harcourt | Aug 2020 - Dec 2022
+              </span>
+            </h3>
+          </article>
+        </section>
+
+        <section class="additional" aria-labelledby="additional-title">
+          <h2 id="additional-title">Additional Information</h2>
+          <p><strong>Work authorisation:</strong> Valid UK Graduate Route permission.</p>
+          <p><strong>Driving:</strong> Full UK manual driving licence.</p>
+          <p>
+            <strong>Technical interests:</strong> Systems programming,
+            networking software, reliable distributed systems and AI-assisted
+            software engineering.
+          </p>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
