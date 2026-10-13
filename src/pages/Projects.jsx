@@ -13,7 +13,6 @@ const projects = [
       "A food-sharing platform that helps donors and receivers coordinate through staffed collection points. Includes role-aware dashboards, a received-only reservation workflow, and donation status tracking.",
     github: "https://github.com/Chike005/Sharebitefrontend",
     backend: "https://github.com/Chike005/sharebite_backend",
-    demo: "https://sharebite.vercel.app",
     number: "01",
     tone: "lime",
     featured: true,
